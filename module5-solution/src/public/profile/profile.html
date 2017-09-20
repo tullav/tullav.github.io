@@ -1,0 +1,18 @@
+<div ng-controller="ProfileController as profile">
+    <div ng-if="profile.data.firstName !== ''">
+        <h1>Your profile</h1>
+        <span> First Name: {{ profile.data.firstName }} </span><br>
+        <span> Last Name: {{profile.data.lastName }} </span><br>
+        <span> Email: {{ profile.data.email }} </span><br>
+        <span> Phone: {{ profile.data.phone }} </span><br>
+        <h2> Favorite Dish </h2>
+        <span> Short Name: {{ profile.data.short_name }} </span><br>
+        <span> Title: {{ profile.data.title }} </span><br>
+        <span> Description: {{ profile.data.description }} </span><br>
+
+        <img src="{{ profile.data.image }}">
+    </div>
+    <div ng-if="profile.data.firstName == ''">
+        Not Signed Up Yet. <a ui-sref="public.sign_up">Sign up Now!</a>
+    </div>
+</div>
