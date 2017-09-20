@@ -1,0 +1,15 @@
+{{list.searchTerm}}
+<table ng-if="list.found.length > 0">
+    <tr>
+        <th>Short Name</th>
+        <th>Name</th>
+        <th>Description</th>
+    </tr>
+    <tr ng-repeat="item in list.found">
+        <td><button class="btn btn-secondary" ng-click="list.onRemove({index: $index});">Don't want this one!</button></td>
+        <td>{{item.short_name}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.description}}</td>
+    </tr>
+</table>
+<div class="error" ng-if="list.found.length === 0;">Nothing found</div>
